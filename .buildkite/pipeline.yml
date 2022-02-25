@@ -1,4 +1,4 @@
 
 steps:
   - label: ":partyparrot: hello world"
-    command: "echo 'My first pipeline!'"
+    command: "echo 'My first pipeline!!'"
