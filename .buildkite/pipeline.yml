@@ -2,8 +2,8 @@ steps:
   - label: ":cat: cat README"
     command: "cat README.md"
 
-  - label: ":partyparrot: hello world"
-    command: "inline_image 'https://media0.giphy.com/media/8Ry7iAVwKBQpG/giphy.gif' 'Rainbows''"
+  # - label: ":partyparrot: hello world"
+  #   command: "echo 'My first pipeline!!! '"
 
   # - label: ":rspec: Unit tests"
   #   command: "echo 'I'm running unit specs - a lot of them'"
