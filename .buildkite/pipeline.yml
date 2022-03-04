@@ -1,3 +1,20 @@
 steps:
-  - label: ":partyparrot: hello world"
-    command: "echo 'My first pipeline!!!'"
+  - label: ":cat: cat README"
+    command: "cat README.md"
+
+  # - label: ":partyparrot: hello world"
+  #   command: "echo 'My first pipeline!!!'"
+
+  # - label: ":rspec: Unit tests"
+  #   command: "echo 'I'm running unit specs - a lot of them'"
+
+  # - label: ":cypress: Integration tests"
+  #   command: "echo 'My integration tests are slooooow'"
+
+  - wait
+
+  # - label: ":terraform: Apply staging"
+  #   command: "echo 'My first pipeline!!!'"
+
+  # - label: ":aws: Deploy to staging"
+  #   command: "echo 'My first pipeline!!!'"
