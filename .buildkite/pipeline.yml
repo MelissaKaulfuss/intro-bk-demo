@@ -20,8 +20,6 @@ steps:
       parallelism: 5
       command: "echo 'My integration tests are slooooow'"
 
-  - wait
-
   - group: ":woman-tipping-hand: Deploy to Staging"
     key: "staging-deploy"
     depends_on: "tests"
