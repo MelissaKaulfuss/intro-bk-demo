@@ -38,24 +38,24 @@ steps:
   - group: ":woman-tipping-hand: Deploy to Staging"
     key: "staging-deploy"
     depends_on: "tests"
-      steps:
-        - label: ":terraform: Plan staging"
-          command: "echo 'can we create all the things?'"
+    steps:
+      - label: ":terraform: Plan staging"
+        command: "echo 'can we create all the things?'"
 
-        - label: ":terraform: Apply staging"
-          command: "echo 'yes please create all the things!'"
+      - label: ":terraform: Apply staging"
+        command: "echo 'yes please create all the things!'"
 
-        - label: ":aws: Deploy to ECS staging"
-          command: "echo ':rollercoaster: woot here are all the things!'"
+      - label: ":aws: Deploy to ECS staging"
+        command: "echo ':rollercoaster: woot here are all the things!'"
 
   - group: ":shipit: Deploy to Production"
     depends_on: "staging-deploy"
-      steps:
-      - label: ":terraform: Plan production"
-        command: "echo 'can we create all the things?'"
+    steps:
+    - label: ":terraform: Plan production"
+      command: "echo 'can we create all the things?'"
 
-        - label: ":terraform: Apply staging"
-          command: "echo 'yes please create all the things!'"
+      - label: ":terraform: Apply staging"
+        command: "echo 'yes please create all the things!'"
 
-        - label: ":aws: Deploy to ECS staging"
-          command: "echo ':passenger_ship: Here are all the things!'"
+      - label: ":aws: Deploy to ECS staging"
+        command: "echo ':passenger_ship: Here are all the things!'"
