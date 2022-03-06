@@ -22,21 +22,6 @@ steps:
 
   - wait
 
-  - block: ":woman-raising-hand: Block step"
-
-  - input: "Who goes there?"
-    fields:
-      - text: "Your name"
-        key: "name"
-
-      - select: "Your team"
-        key: "teams"
-        options:
-          - label: "Customer Support"
-            value: "Pipelines"
-          - label: "Marketing"
-            value: "Foundation"
-
   - group: ":woman-tipping-hand: Deploy to Staging"
     key: "staging-deploy"
     depends_on: "tests"
@@ -48,6 +33,23 @@ steps:
         command: "echo 'yes please create all the things!'"
       - label: ":aws: Deploy to ECS staging"
         command: "echo ':rollercoaster: woot here are all the things!'"
+
+  - block: "Release"
+    prompt: "Fill out the details for release"
+    fields:
+      - text: "Release Name"
+        key: "release-name"
+      - text: "Changelog"
+        key: "release-notes"
+        required: false
+      - select: "Type"
+        key: "release-type"
+        default: "beta"
+        options:
+          - label: "Beta"
+            value: "beta"
+          - label: "Stable"
+            value: "stable"
 
   - group: ":shipit: Deploy to Production"
     depends_on: "staging-deploy"
