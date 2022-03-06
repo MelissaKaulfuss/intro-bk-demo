@@ -10,29 +10,30 @@ steps:
 
   - group: ":sleuth_or_spy: Tests"
     key: "tests"
-      steps:
-      - label: ":rspec: Unit tests"
-        parallelism: 5
-        command: "echo 'I'm running unit specs - parallelising means they'll run across 5 agents and finish faster'"
+    steps:
+    - label: ":rspec: Unit tests"
+      parallelism: 5
+      command: "echo 'I'm running unit specs - parallelising means they'll run across 5 agents and finish faster'"
 
-      - label: ":cypress: Integration tests"
-        parallelism: 5
-        command: "echo 'My integration tests are slooooow'"
+    - label: ":cypress: Integration tests"
+      parallelism: 5
+      command: "echo 'My integration tests are slooooow'"
 
   - wait
 
   - block: ":woman-raising-hand: Block step"
+
   - input: "Who goes there?"
-  fields:
-    - text: "Your name"
-      key: "name"
-    - select: "Your team"
-      key: "teams"
-      options:
-        - label: "Payments"
-          value: "Pipelines"
-        - label: "Marketing"
-          value: "Operations"
+    fields:
+      - text: "Your name"
+        key: "name"
+      - select: "Your team"
+        key: "teams"
+        options:
+          - label: "Payments"
+            value: "Pipelines"
+          - label: "Marketing"
+            value: "Operations"
 
   - group: ":woman-tipping-hand: Deploy to Staging"
     key: "staging-deploy"
