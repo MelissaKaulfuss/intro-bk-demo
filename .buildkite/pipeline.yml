@@ -50,7 +50,6 @@ steps:
             value: "stable"
 
   - group: ":shipit: Deploy to Production"
-    depends_on: "staging-deploy"
 
     steps:
     - label: ":terraform: Plan production"
