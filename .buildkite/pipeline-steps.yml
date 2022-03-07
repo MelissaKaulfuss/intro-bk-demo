@@ -1,5 +1,5 @@
 steps:
-  - command: "buildkite-agent pipeline upload"
-
     label: ":rspec: Unit tests"
     command: "echo 'I'm running all the unit specs and I can be slow'"
+
+- command: "buildkite-agent pipeline upload"
