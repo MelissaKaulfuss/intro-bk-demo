@@ -48,10 +48,10 @@ steps:
 
   # - group: ":shipit: Deploy to Production"
 
-    steps:
-    - label: ":terraform: Plan production"
-      command: "echo 'can we create all the things?'"
-    - label: ":terraform: Apply staging"
-      command: "echo 'yes please create all the things!'"
-    - label: ":aws: Deploy to ECS staging"
-      command: "echo ':passenger_ship: Here are all the things!'"
+    # steps:
+    # - label: ":terraform: Plan production"
+    #   command: "echo 'can we create all the things?'"
+    # - label: ":terraform: Apply staging"
+    #   command: "echo 'yes please create all the things!'"
+    # - label: ":aws: Deploy to ECS staging"
+    #   command: "echo ':passenger_ship: Here are all the things!'"
