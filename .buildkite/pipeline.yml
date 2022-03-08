@@ -3,7 +3,7 @@ steps:
     command: "echo 'My first pipeline!!!'"
 
   - label: ":lint-roller: Linting"
-    command: "linting all the JS"
+    command: "echo ':allthethings: linting all the JS'"
 
   # - group: ":sleuth_or_spy: Tests"
   #   key: "tests"
