@@ -2,8 +2,8 @@ steps:
   - label: ":partyparrot: hello world"
     command: "echo 'My first pipeline!!!'"
 
-  # - label: ":lint-roller: Linting"
-  #   command: "echo 'linting all the JS!!!'"
+  - label: ":lint-roller: Linting"
+    command: "echo 'linting all the JS!!!'"
 
   # - group: ":sleuth_or_spy: Tests"
   #   key: "tests"
