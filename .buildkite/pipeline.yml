@@ -11,7 +11,7 @@ steps:
     steps:
     - label: ":rspec: Unit tests"
       parallelism: 5
-      command: "echo 'I'm running unit specs - parallelising means the action will run across 5 agents and finish faster'"
+      command: "echo 'I am running unit specs - parallelising means the action will run across 5 agents and finish faster'"
 
     - label: ":cypress: Integration tests"
       parallelism: 5
