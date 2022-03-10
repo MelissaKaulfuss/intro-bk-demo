@@ -5,53 +5,53 @@ steps:
   - label: ":lint-roller: Linting"
     command: "echo 'linting all the JS!!!'"
 
-  # - group: ":sleuth_or_spy: Tests"
-  #   key: "tests"
+  - group: ":sleuth_or_spy: Tests"
+    key: "tests"
 
-  #   steps:
-  #   - label: ":rspec: Unit tests"
-  #     parallelism: 5
-  #     command: "echo 'I'm running unit specs - parallelising means the action will run across 5 agents and finish faster'"
+    steps:
+    - label: ":rspec: Unit tests"
+      parallelism: 5
+      command: "echo 'I'm running unit specs - parallelising means the action will run across 5 agents and finish faster'"
 
-  #   - label: ":cypress: Integration tests"
-  #     parallelism: 5
-  #     command: "echo 'My integration tests are slooooow so again using parallelism'"
+    - label: ":cypress: Integration tests"
+      parallelism: 5
+      command: "echo 'My integration tests are slooooow so again using parallelism'"
 
-  # - group: ":woman-tipping-hand: Deploy to Staging"
-  #   key: "staging-deploy"
-  #   depends_on: "tests"
+  - group: ":woman-tipping-hand: Deploy to Staging"
+    key: "staging-deploy"
+    depends_on: "tests"
 
-  #   steps:
-  #     - label: ":terraform: Plan staging"
-  #       command: "echo 'can we create all the things?'"
-  #     - label: ":terraform: Apply staging"
-  #       command: "echo 'yes please create all the things!'"
-  #     - label: ":aws: Deploy to ECS staging"
-  #       command: "echo ':rollercoaster: woot here are all the things!'"
+    steps:
+      - label: ":terraform: Plan staging"
+        command: "echo 'can we create all the things?'"
+      - label: ":terraform: Apply staging"
+        command: "echo 'yes please create all the things!'"
+      - label: ":aws: Deploy to ECS staging"
+        command: "echo ':rollercoaster: woot here are all the things!'"
 
-  # - block: "Release"
-  #   prompt: "Fill out the details for release"
-  #   fields:
-  #     - text: "Release Name"
-  #       key: "release-name"
-  #     - text: "Changelog"
-  #       key: "release-notes"
-  #       required: false
-  #     - select: "Type"
-  #       key: "release-type"
-  #       default: "beta"
-  #       options:
-  #         - label: "Beta"
-  #           value: "beta"
-  #         - label: "Stable"
-  #           value: "stable"
+  - block: "Release"
+    prompt: "Fill out the details for release"
+    fields:
+      - text: "Release Name"
+        key: "release-name"
+      - text: "Changelog"
+        key: "release-notes"
+        required: false
+      - select: "Type"
+        key: "release-type"
+        default: "beta"
+        options:
+          - label: "Beta"
+            value: "beta"
+          - label: "Stable"
+            value: "stable"
 
-  # - group: ":shipit: Deploy to Production"
+  - group: ":shipit: Deploy to Production"
 
-  #   steps:
-  #   - label: ":terraform: Plan production"
-  #     command: "echo 'can we create all the things?'"
-  #   - label: ":terraform: Apply staging"
-  #     command: "echo 'yes please create all the things!'"
-  #   - label: ":aws: Deploy to ECS staging"
-  #     command: "echo ':passenger_ship: Here are all the things!'"
+    steps:
+    - label: ":terraform: Plan production"
+      command: "echo 'can we create all the things?'"
+    - label: ":terraform: Apply staging"
+      command: "echo 'yes please create all the things!'"
+    - label: ":aws: Deploy to ECS staging"
+      command: "echo ':passenger_ship: Here are all the things!'"
