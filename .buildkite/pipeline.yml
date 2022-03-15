@@ -9,11 +9,11 @@ steps:
     key: "tests"
 
     steps:
-    - label: ":rspec: Unit tests"
+    - label: ":rspec: Unit tests %n"
       parallelism: 5
       command: "echo 'I am running unit specs - parallelising means the action will run across 5 agents and finish faster'"
 
-    - label: ":cypress: Integration tests"
+    - label: ":cypress: Integration tests %N"
       parallelism: 5
       command: "echo 'My integration tests are slooooow so again using parallelism'"
 
