@@ -9,7 +9,7 @@ steps:
     key: "tests"
 
     steps:
-    - label: ":rspec: Unit tests %n"
+    - label: ":rspec: Unit tests %t"
       parallelism: 5
       command: "echo 'I am running unit specs - parallelising means the action will run across 5 agents and finish faster'"
 
